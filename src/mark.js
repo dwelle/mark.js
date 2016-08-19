@@ -646,7 +646,7 @@ class Mark {
             this.opt.each(element);
         };
         this.forEachNode(node => {
-            this.wrapMatches(node, regexp, true, match => {
+            this.wrapMatches(node, regexp, this.opt.ignoreFirstGroup ? false : true, match => {
                 return this.opt.filter(node, match, totalMatches);
             }, eachCb);
         }, () => {
